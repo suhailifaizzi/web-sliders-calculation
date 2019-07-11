@@ -1,50 +1,30 @@
 $(document).ready( function () {
 
-    /**
-     * VARIABLES
-     */
-    var calculatedAmount;                                   // Declare variables to use in js
-    var calculator = $('.calculator');                      // Link to calculator form
-    var input1Slider = calculator.find('input-1-slider');   // Link to 1st slider
-    var input1Amount = calculator.find('input-1-amount');    // Link to span for slider 1 amount
-    var totalAmount = calculator.find('total-amount');      // Link to total amount
-
-    /**
-     * INIT PAGE (FILLS UP DEFAULT SPAN VALUE)
-     */
-    $(window).on('DOMContentLoaded', function(){
-
-    });
-
-    $(window).on('DOMContentLoaded', function () {
-        tipAmount.text( calculatorTip.val() + '%' );
-        amount = calculatorBill.val() * 1;
-        percent = calculatorTip.val() * 1;
-        result = amount + amount * ( percent / 100 );
-        calculatorResult.text( result.toFixed(2) + '$' );
-    });
+    // Initialize a new plugin instance for all
+    // e.g. $('input[type="range"]') elements.
+    $('input[type="range"]').rangeslider({polyfill: false});
 
 
-    /**
-     * SLIDER FUNCTION;
-     */
-    input1Slider.on('change', function(){
-        input1Amount.text(input1Slider.val());
-        calculatedAmount = input1Slider.val() * 5;
-        totalAmount.text('RM ' + calculatedAmount.toFixed(2));
-    });
-/*
+
     // VARIABLES
     // ----------------------------------------------------------
 
     var amount, percent, result;
     var calculator = $('.calculator');
-    var calculatorBill = calculator.find('.calculator__bill');
-    var calculatorTip = calculator.find('.calculator__tip');
+    // var calculatorBill = calculator.find('.calculator__bill');
+    var slider1 = calculator.find('.input-1-slider');
     var calculatorResult = calculator.find('.calculator__result');
-    var tipAmount = calculator.find('.tip-amount');
+    var slider1amount = calculator.find('.input-1-amount');
 
+    $(document).ready(function(){
+        slider1amount.text(slider1.val());
+    });
 
+    slider1.on('input', function(){
+        slider1amount.text(slider1.val());
+    });
+
+/*
     // INIT BILL
     // ----------------------------------------------------------
 

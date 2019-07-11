@@ -1,13 +1,32 @@
 <html>
+    <!-- <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script> -->
+    <script language="Javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script> -->
+    <!-- <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script> -->
+    <script type="text/javascript" src="rangeslider.js"></script>
     <script type="text/javascript" src="apps.js"></script>
+    <link rel="stylesheet" type="text/css" href="rangeslider.css">
 <head>
 </head>
 <body>
     <h1>Quotation</h1>
-    <form class="calculator">
+    <!-- <form class="calculator">
         <label>Input 1 (RM 5.00): <span class="input-1-amount"></span></label>
-        <input type="range" type="range" min="0" max="10" step="1" class="input-1-slider"/>
+        <input id="range" type="range" type="range" min="0" max="10" step="1" class="input-1-slider"/>
         <h2>Total: <span class="total-amount"></span></h2>
+    </form> -->
+    <form class="calculator">
+    <label>Input 1 (RM5.00), Quantity: <span class="input-1-amount"></span></label>
+    </br></br></br>
+    <input
+        class="input-1-slider"
+        type="range"
+        min="0"                    
+        max="10"                      // default 100
+        step="1"                       // default 1
+        value="1"                     // default min + (max-min)/2
+        data-orientation="horizontal"   // default horizontal
+    >
     </form>
 </body>
 </html>
